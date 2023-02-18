@@ -18,7 +18,7 @@ const Heading = (
     ...props
   }: {
     level: "h1" | "h2" | "h3",
-    className: string,
+    className?: string,
     children: React.ReactNode,
   }) => {
   const HeadingTag = `${level}` as keyof JSX.IntrinsicElements;

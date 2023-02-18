@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@react-aria/color": "^3.0.0-beta.18",
+    "@react-three/drei": "^9.56.25",
+    "@react-three/fiber": "^8.11.2",
     "jotai": "^2.0.2",
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-dom": "^18.2.0",
-    "react-stately": "^3.20.0"
+    "react-stately": "^3.20.0",
+    "three": "^0.149.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
