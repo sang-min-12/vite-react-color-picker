@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import {forwardRef, useImperativeHandle, useRef} from 'react';
 import {useColorWheel} from '@react-aria/color';
 import {useColorWheelState} from '@react-stately/color';
 import {VisuallyHidden} from '@react-aria/visually-hidden';
@@ -8,7 +8,7 @@ const RADIUS = 100;
 const TRACK_THICKNESS = 28;
 const THUMB_SIZE = 20;
 
-const ColorWheel = (props: any) => {
+const ColorWheel = forwardRef((props: any, ref) => {
   let state = useColorWheelState(props);
   let inputRef = useRef(null);
   let {trackProps, inputProps, thumbProps} = useColorWheel({
@@ -18,6 +18,10 @@ const ColorWheel = (props: any) => {
   }, state, inputRef);
 
   let {focusProps, isFocusVisible} = useFocusRing();
+
+  useImperativeHandle(ref, () => ({
+    wheelState: state,
+  }));
 
   return (
     <div style={{position: 'relative', display: 'inline-block'}}>
@@ -39,6 +43,6 @@ const ColorWheel = (props: any) => {
       </div>
     </div>
   );
-};
+});
 
 export default ColorWheel;

@@ -10,6 +10,7 @@ import SmokeImage from '../assets/smoke_image.png';
 
 const ImageArea = () => {
   const color = useAtomValue(wheelColor);
+
   return (
     <div className="flex flex-col">
       <p 
@@ -22,7 +23,7 @@ const ImageArea = () => {
         <Heading level="h3" className="mb-4 text-center">
           Canvas Imgae
         </Heading>
-        <div className="w-[300px] h-[500px]">
+        <div className="max-w-[300px] w-full h-[500px]">
           <Canvas frameloop="demand">
             <color attach={"background"} args={["#000"]} />
             <CanvasImage color={color.toString("hex")} />
